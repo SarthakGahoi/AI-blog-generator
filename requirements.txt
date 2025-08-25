@@ -1,0 +1,4 @@
+npm install express mongoose bcryptjs jsonwebtoken cors dotenv helmet express-rate-limit openai
+npm install -D nodemon concurrently
+
+npm install express-validator
