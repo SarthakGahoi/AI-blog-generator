@@ -10,16 +10,18 @@ console.log('🚀 Starting AI Blog Generator API...');
 // Connect to database
 connectDB();
 
-// CORS middleware (must be before body parsers)
+// CORS middleware (must be before body parsers) - FIXED VERSION
 app.use(cors({
   origin: process.env.FRONTEND_URL || 'http://localhost:3000',
-  credentials: true
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  credentials: true,
+  allowedHeaders: ['Content-Type', 'Authorization'],
 }));
 
 // Body parsing middleware with error handling
 app.use(express.json({ 
   limit: '10mb',
-  strict: true,  // Only parse arrays and objects
+  strict: true,
   type: 'application/json'
 }));
 
@@ -28,7 +30,7 @@ app.use(express.urlencoded({
   limit: '10mb'
 }));
 
-// Health check (simple, no body required)
+// Health check
 app.get('/health', (req, res) => {
   res.json({ 
     status: 'OK', 
@@ -50,7 +52,6 @@ app.use('/api/admin', adminRoutes);
 app.use((err, req, res, next) => {
   console.error('❌ Server Error:', err);
   
-  // Handle JSON parsing errors
   if (err instanceof SyntaxError && err.status === 400 && 'body' in err) {
     return res.status(400).json({ 
       message: 'Invalid JSON format in request body',
