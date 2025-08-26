@@ -14,11 +14,11 @@ const Footer = () => {
     >
       <Container maxWidth="lg">
         <Typography variant="body2" color="text.secondary" align="center">
-          © 2025 AI Blog Generator. Built with ❤️ using React & Node.js
+          © 2025 AI Blog Generator. Built using React & Node.js by cyberwarrior
         </Typography>
         <Typography variant="body2" color="text.secondary" align="center" sx={{ mt: 1 }}>
           Made for educational purposes • 
-          <Link href="https://github.com" target="_blank" rel="noopener" sx={{ ml: 1 }}>
+          <Link href="https://github.com/Cyber-warrior-2026/AI-blog-generator" target="_blank" rel="noopener" sx={{ ml: 1 }}>
             View Source Code
           </Link>
         </Typography>

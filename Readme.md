@@ -16,6 +16,7 @@ A full-stack web application that generates high-quality blog posts using AI. Bu
 ## 🛠️ Tech Stack
 
 ### Frontend
+
 - React.js 18
 - Material-UI (MUI)
 - React Router
@@ -23,6 +24,7 @@ A full-stack web application that generates high-quality blog posts using AI. Bu
 - React Hot Toast
 
 ### Backend
+
 - Node.js
 - Express.js
 - MongoDB with Mongoose
@@ -33,14 +35,18 @@ A full-stack web application that generates high-quality blog posts using AI. Bu
 ## 📦 Installation & Setup
 
 ### Prerequisites
+
 - Node.js (v14 or higher)
 - MongoDB (local or Atlas)
 - OpenAI API Key (optional - mock data available)
 
 ### 1. Clone Repository
-git clone https://github.com/yourusername/ai-blog-generator.git
+
+git clone https://github.com/Cyber-warrior-2026/ai-blog-generator.git
 cd ai-blog-generator
+
 ### 2. Backend Setup
+
 cd backend
 npm install
 
@@ -48,8 +54,11 @@ Create .env file
 cp .env.example .env
 
 Edit .env with your configuration
+
 ### 3. Frontend Setup
+
 ### 3. Frontend Setup
+
 cd frontend
 npm install
 
@@ -61,6 +70,7 @@ Edit .env with your configuration
 ### 4. Environment Variables
 
 #### Backend `.env`:
+
 NODE_ENV=development
 PORT=5000
 MONGODB_URI=your_mongodb_connection_string
@@ -69,12 +79,14 @@ OPENAI_API_KEY=your_openai_api_key
 FRONTEND_URL=http://localhost:3000
 
 #### Frontend `.env`:
+
 REACT_APP_API_URL=http://localhost:5000/api
 REACT_APP_APP_NAME=AI Blog Generator
 
 ### 5. Run Application
 
 #### Development Mode:
+
 Terminal 1: Backend
 cd backend
 npm run dev
@@ -82,7 +94,9 @@ npm run dev
 Terminal 2: Frontend
 cd frontend
 npm start
+
 #### Production Mode:
+
 Build frontend
 cd frontend
 npm run build
@@ -96,17 +110,20 @@ npm start
 ### Deploy to Vercel (Recommended)
 
 #### Backend Deployment:
+
 1. Push code to GitHub
 2. Connect Vercel to your repository
 3. Set environment variables in Vercel dashboard
 4. Deploy backend first
 
 #### Frontend Deployment:
+
 1. Update `REACT_APP_API_URL` to your backend URL
 2. Deploy frontend to Vercel
 3. Update `FRONTEND_URL` in backend environment
 
 ### Deploy to Heroku
+
 Backend
 cd backend
 heroku create your-app-name-backend
@@ -127,17 +144,20 @@ Deploy build folder to Heroku or Netlify
 ## 📚 API Documentation
 
 ### Authentication Endpoints
+
 - `POST /api/auth/register` - Register new user
-- `POST /api/auth/login` - Login user  
+- `POST /api/auth/login` - Login user
 - `GET /api/auth/me` - Get current user
 
 ### Blog Endpoints
+
 - `POST /api/blog/generate` - Generate new blog post
 - `GET /api/blog/my-blogs` - Get user's blogs
 - `GET /api/blog/:id` - Get specific blog
 - `DELETE /api/blog/:id` - Delete blog
 
 ### Admin Endpoints (Admin only)
+
 - `GET /api/admin/stats` - Get usage statistics
 - `GET /api/admin/recent-generations` - Get recent generations
 - `GET /api/admin/users` - Get all users
@@ -145,6 +165,7 @@ Deploy build folder to Heroku or Netlify
 ## 🧪 Testing
 
 ### Backend Tests:
+
 cd backend
 npm test
 cd frontend
