@@ -113,5 +113,22 @@ router.get('/me', auth, (req, res) => {
     }
   });
 });
+router.get('/dbtest', async (req, res) => {
+  try {
+    const count = await User.countDocuments();
+    res.json({ 
+      message: 'Database connected', 
+      userCount: count,
+      mongoUri: !!process.env.MONGODB_URI,
+      jwtSecret: !!process.env.JWT_SECRET
+    });
+  } catch (err) {
+    console.error('DB test error:', err);
+    res.status(500).json({ 
+      message: 'DB connection failed', 
+      error: err.message 
+    });
+  }
+});
 
 module.exports = router;
