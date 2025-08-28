@@ -72,3 +72,27 @@ app.listen(PORT, () => {
   console.log(`✅ Server running on port ${PORT}`);
   console.log(`🔗 Health check: http://localhost:${PORT}/health`);
 });
+// Global error handlers
+process.on('uncaughtException', (err) => {
+  console.error('Uncaught Exception:', err);
+  process.exit(1);
+});
+
+process.on('unhandledRejection', (reason, promise) => {
+  console.error('Unhandled Rejection at:', promise, 'reason:', reason);
+  process.exit(1);
+});
+
+// Enhanced error middleware
+app.use((err, req, res, next) => {
+  console.error('❌ Server Error:', err.stack);
+  
+  if (res.headersSent) {
+    return next(err);
+  }
+  
+  res.status(500).json({ 
+    message: 'Internal server error',
+    error: process.env.NODE_ENV === 'development' ? err.message : 'Something went wrong'
+  });
+});
