@@ -170,3 +170,12 @@ cd backend
 npm test
 cd frontend
 npm test
+
+## My Contribution
+This repository is forked from [Cyber-warrior-2026/AI-blog-generator](https://github.com/Cyber-warrior-2026/AI-blog-generator).  
+
+I contributed mainly to the **frontend development**, including:  
+- Designing and implementing React components (`frontend/components/`)  
+- Structuring pages and layouts in the `frontend/pages/` folder  
+- Integrating frontend with backend APIs for blog generation  
+- Enhancing styling and user experience for better usability
